@@ -5,7 +5,7 @@
 Designed and developed by **Anders Isaksson – SA7BNB**
 
 ![Radio Gateway](https://github.com/sa7bnb/ESP32-S3-WROOM-RadioGateway/blob/main/image.jpg?raw=true)
-
+![Radio Gateway](https://github.com/sa7bnb/ESP32-S3-WROOM-RadioGateway/blob/main/image2.jpg?raw=true)
 ---
 
 > ⚠️ **Work in progress / Under development**
