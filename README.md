@@ -17,7 +17,9 @@ Designed and developed by **Anders Isaksson – SA7BNB**
 
 This is the design for a small, standalone **RoIP (Radio over IP) gateway** built around an **ESP32-S3** module. The idea is simple: breathe new life into an old analog FM radio by linking it to other radios over the internet — similar in spirit to existing RoIP solutions, but **without needing a computer connected to the radio**.
 
-Most traditional RoIP / internet-linking setups (sound-card interfaces, AllStarLink nodes, EchoLink, etc.) require a PC, Raspberry Pi, or similar computer wired between the radio and the network. This project aims to collapse all of that into a single small board that connects directly to the radio's data port on one side and to WiFi on the other.
+Most traditional RoIP / internet-linking setups — such as **AllStarLink**, **EchoLink**, and **IRLP** — require a dedicated computer (a PC or Raspberry Pi) wired between the radio and the network, running continuously. This project aims to collapse all of that into a single small board that connects directly to the radio's data port on one side and to WiFi on the other.
+
+The vision is that this gateway could be used in the same spirit as **AllStarLink, EchoLink and similar systems** — linking analog radios together over the internet — but **without needing a power-hungry computer running 24/7**. Instead of a full Linux machine drawing watts around the clock just to keep a node online, the goal is a low-power, always-on ESP32 board that sips power and can be left running permanently.
 
 The board talks to the radio through its packet/DATA port: it pulls receive audio out, feeds transmit audio in, keys PTT, and senses the COR/squelch line. It then connects over WiFi to a server (self-hosted) that ties multiple radios together across the internet — letting otherwise isolated analog radios talk to each other over distance.
 
@@ -25,11 +27,11 @@ The reference target for this design is the **Yaesu FT-7900R** (and the closely 
 
 ## Goals
 
-- **No PC required at the radio** — the gateway is self-contained.
+- **No 24/7 computer required** — replaces a power-hungry always-on PC or Raspberry Pi node with a low-power ESP32 board.
 - **Direct connection** to the radio's 6-pin mini-DIN DATA port.
 - **Isolated** audio and control lines to keep ground loops and RF/digital noise out of the audio path.
 - **Small, low cost, few components** — built around a single ESP32-S3 module with mostly passive supporting parts.
-- **Self-hosted linking** — connects to a server you run, in the same family of ideas as other RoIP systems.
+- **AllStarLink / EchoLink-style linking** — intended to link analog radios over the internet in the same spirit as established RoIP systems, connecting to a server you run.
 
 ## Repository contents
 
